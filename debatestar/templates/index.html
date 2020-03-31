@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+<!--Template for Introduction: main page for project entry -->
+
+{% block header %}
+
+{% endblock %}
+
+{% block content %}
+    <section>
+      <div class="container">
+        <div class="row justify-content-center text-center mb-6">
+          <div class="col-xl-8 col-lg-9 col-md-10">
+            <h1 class="display-4">An interactive online debate NLP Engine</h1>
+            <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+            <div class="d-flex flex-column flex-sm-row justify-content-center align-items-center align-items-sm-start mt-5">
+              <div class="d-flex flex-column mx-1 text-center">
+                <a href="#" class="btn btn-lg btn-primary mb-2">
+                  <img class="icon" src="{{ url_for('static', filename='img/icons/social/github.svg') }}" alt="github social icon" data-inject-svg />
+                  <span>View on Github</span>
+                </a>
+                <a href="#" class="text-small hover-arrow">View Documentation</a>
+              </div>
+              <a href="#" class="mx-1 btn btn-lg btn-primary-3 mt-3 mt-sm-0">Luanch Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-xl-8 col-lg-9">
+            <div class="rounded bg-primary-3 p-4 text-light text-monospace shadow layer-2">
+              <div>
+                <span class="text-primary-2">$</span>
+                <span data-typed-text data-type-speed="80" data-strings='["npm install leap.js"]' data-loop="true" data-back-delay="2000"></span>
+              </div>
+            </div>
+            <div class="decoration bottom right" data-aos="fade-up">
+              <img class="bg-primary-2" src="{{ url_for('static', filename='img/decorations/deco-blob-2.svg') }}" alt="deco-blob-2 decoration" data-inject-svg />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}

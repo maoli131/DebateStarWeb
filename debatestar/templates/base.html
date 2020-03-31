@@ -1,0 +1,128 @@
+<!--All templates extends from this basic template (nav bar, bottom section)-->
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Debate Star Web Interface</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/base.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/loader-typing.css') }}" type="text/css">   
+    <link rel="preload" as="font" href="{{ url_for('static', filename='fonts/Inter-UI-upright.var.woff2') }}" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="{{ url_for('static', filename='fonts/Inter-UI.var.woff2') }}" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- <div class="loader">
+      <div class="loading-animation"></div>
+    </div> -->
+    <div class="navbar-container">
+      <nav class="navbar navbar-expand-lg justify-content-between navbar-light border-bottom-0 bg-white" data-sticky="top">
+        <div class="container">
+          <div class="col flex-fill px-0 d-flex justify-content-between">
+            <a class="navbar-brand mr-0 fade-page" href="{{ url_for('intro.index') }}">
+              DebateStar
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <img class="icon navbar-toggler-open" src="{{ url_for('static', filename='img/icons/interface/menu.svg') }}" alt="menu interface icon" data-inject-svg />
+              <img class="icon navbar-toggler-close" src="{{ url_for('static', filename='img/icons/interface/cross.svg') }}" alt="cross interface icon" data-inject-svg />
+            </button>
+          </div>
+          <div class="collapse navbar-collapse col px-0 px-lg-2 flex-fill">
+            <div class="py-2 py-lg-0">
+              <ul class="navbar-nav">       
+                <li class="nav-item"><a href="#" class="nav-link">Introduction</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Demos</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Team</a></li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown-grid" aria-expanded="false" aria-haspopup="true">Support</a>
+                  <div class="dropdown-menu row">
+                    <div class="col-auto px-0" data-dropdown-content>
+                      <div class="bg-white rounded border shadow-lg o-hidden">
+                        <div class="p-3">
+                          <h6 class="mb-0">Product Support</h6>
+                        </div>
+                        <div class="list-group list-group-flush">
+                          <a href="#" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-3">
+                            <img class="icon icon-md" src="{{ url_for('static', filename='img/icons/theme/files/selected-file.svg') }}" alt="selected-file icon" data-inject-svg />
+                            <div class="text-body ml-3">
+                              <span>Documentation</span>
+                              <div class="text-small text-muted">Get all the information you need</div>
+                            </div>
+                          </a>
+                          <a href="#" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-3">
+                            <img class="icon icon-md" src="{{ url_for('static', filename='img/icons/theme/communication/chat-4.svg') }}" alt="chat-4 icon" data-inject-svg />
+                            <div class="text-body ml-3">
+                              <span>Looking for answers?</span>
+                              <div class="text-small text-muted">Get support</div>
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="collapse navbar-collapse justify-content-end col flex-fill px-0"><a href="#" class="btn btn-primary ml-lg-3">Launch</a>
+
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <section class="content">
+        <header>
+            {% block header %}{% endblock %}
+        </header>
+        {% block content %}{% endblock %}
+    </section>
+
+    <footer class="pb-5 bg-primary-3 text-light">
+      <div class="container">
+        <div class="row mb-4 justify-content-center">
+          <div class="col-auto">
+            <a href="{{ url_for('intro.index') }}">DebateStar</a>
+          </div>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <ul class="nav justify-content-center">
+              <li class="nav-item"><a href="#" class="nav-link">Introduction</a>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link">Demos</a>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link">Support</a>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link">Teams</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row justify-content-center text-center">
+          <div class="col-xl-10">
+            <small class="text-muted">&copy;2019 DebateStar All Rights Reserved.</small>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Javascript files -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+    <!-- AOS (Animate On Scroll - animates elements into view while scrolling down) -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/aos.js') }}"></script>
+    <!-- ScrollMonitor (manages events for elements scrolling in and out of view) -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scrollMonitor.js') }}"></script>
+    <!-- Typed text (animated typing effect)-->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/typed.min.js') }}"></script>
+    <!-- Required theme scripts (Do not remove) -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/theme.js') }}"></script>
+
+</body>
+
+</html>
