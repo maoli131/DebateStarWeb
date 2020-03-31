@@ -7,6 +7,8 @@ The main page highlights our project features, links to Github open source codes
 and introduces our team members. The visualization page serves as the main 
 interface to interact with our NLP engine. It dynamically presents our model's prediction scores for varied debates.
 
+![intropage](debatestar/static/img/intropage.jpg)
+
 ## Technology
 
 The backend is built with micro web framework Flask while the frontend is built with modern HTML5/CSS/Javascript and Bootstrap 4 (I used Flask's built-in Jinja 
