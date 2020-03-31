@@ -19,7 +19,7 @@
               <form class="row">
                 <div class="col-lg">
                   <div class="form-group mb-lg-0">
-                    <input type="text" placeholder="Date and time" class="form-control form-control-lg" data-flatpickr data-alt-input="true" data-enable-time="true" data-date-format="Y-m-d H:i" />
+                    <input type="text" placeholder="Pick a date" class="form-control form-control-lg" data-flatpickr data-alt-input="true" data-date-format="Y-m-d" />
                   </div>
                 </div>
                 <div class="col-lg">
@@ -42,10 +42,10 @@
       </div>
       <div class="decoration-wrapper">
         <div class="decoration bottom left scale-2 flip-y d-none d-xl-block" data-jarallax-element="50">
-          <img class="bg-white" src="assets/img/decorations/deco-dots-4.svg" alt="deco-dots-4 decoration" data-inject-svg />
+          <img class="bg-white" src=" {{ url_for('static', filename='img/decorations/deco-dots-4.svg') }}" alt="deco-dots-4 decoration" data-inject-svg />
         </div>
         <div class="decoration bottom right scale-3" data-jarallax-element="80">
-          <img class="bg-primary-2" src="assets/img/decorations/deco-blob-13.svg" alt="deco-blob-13 decoration" data-inject-svg />
+          <img class="bg-primary-2" src=" {{ url_for('static', filename='img/decorations/deco-blob-13.svg') }}" alt="deco-blob-13 decoration" data-inject-svg />
         </div>
       </div>
     </section>
@@ -96,7 +96,6 @@
         </div>
         <div class="row">
           <div class="col-md-4 d-flex mb-4" data-aos="fade-up" data-aos-delay="100">
-            <img class="icon" src="assets/img/icons/theme/shopping/wallet.svg" alt="icon" data-inject-svg />
             <div class="ml-3">
               <h5>Main Point 1</h5>
               <p>
@@ -105,7 +104,6 @@
             </div>
           </div>
           <div class="col-md-4 d-flex mb-4" data-aos="fade-up" data-aos-delay="200">
-            <img class="icon" src="assets/img/icons/theme/general/settings-1.svg" alt="icon" data-inject-svg />
             <div class="ml-3">
               <h5>Main Point 2</h5>
               <p>
@@ -114,7 +112,6 @@
             </div>
           </div>
           <div class="col-md-4 d-flex mb-4" data-aos="fade-up" data-aos-delay="300">
-            <img class="icon" src="assets/img/icons/theme/files/cloud-upload.svg" alt="icon" data-inject-svg />
             <div class="ml-3">
               <h5>Main Point 3</h5>
               <p>
@@ -123,7 +120,6 @@
             </div>
           </div>
           <div class="col-md-4 d-flex mb-4" data-aos="fade-up" data-aos-delay="400">
-            <img class="icon" src="assets/img/icons/theme/shopping/chart-line-1.svg" alt="icon" data-inject-svg />
             <div class="ml-3">
               <h5>Counter Point 1</h5>
               <p>
@@ -132,7 +128,6 @@
             </div>
           </div>
           <div class="col-md-4 d-flex mb-4" data-aos="fade-up" data-aos-delay="500">
-            <img class="icon" src="assets/img/icons/theme/shopping/chart-line-1.svg" alt="icon" data-inject-svg />
             <div class="ml-3">
               <h5>Counter Point 2</h5>
               <p>
@@ -141,7 +136,6 @@
             </div>
           </div>
           <div class="col-md-4 d-flex mb-4" data-aos="fade-up" data-aos-delay="600">
-            <img class="icon" src="assets/img/icons/theme/tools/pantone.svg" alt="icon" data-inject-svg />
             <div class="ml-3">
               <h5>Counter Point 3</h5>
               <p>

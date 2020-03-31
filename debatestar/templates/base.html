@@ -45,18 +45,18 @@
                           <h6 class="mb-0">Product Support</h6>
                         </div>
                         <div class="list-group list-group-flush">
-                          <a href="#" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-3">
+                          <a href="https://github.com/maoli131/DebateStar" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-3">
                             <img class="icon icon-md" src="{{ url_for('static', filename='img/icons/theme/files/selected-file.svg') }}" alt="selected-file icon" data-inject-svg />
                             <div class="text-body ml-3">
-                              <span>Documentation</span>
-                              <div class="text-small text-muted">Get all the information you need</div>
+                              <span>NLP Engine</span>
+                              <div class="text-small text-muted">Learn more about our ML model</div>
                             </div>
                           </a>
-                          <a href="#" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-3">
+                          <a href="https://github.com/maoli131/DebateStarWeb" target="_blank" class="list-group-item list-group-item-action d-flex align-items-center p-3">
                             <img class="icon icon-md" src="{{ url_for('static', filename='img/icons/theme/communication/chat-4.svg') }}" alt="chat-4 icon" data-inject-svg />
                             <div class="text-body ml-3">
-                              <span>Looking for answers?</span>
-                              <div class="text-small text-muted">Get support</div>
+                              <span>Online Platform</span>
+                              <div class="text-small text-muted">Learn more about our platform</div>
                             </div>
                           </a>
                         </div>
@@ -67,7 +67,7 @@
               </ul>
             </div>
           </div>
-          <div class="collapse navbar-collapse justify-content-end col flex-fill px-0"><a href="#" class="btn btn-primary ml-lg-3">Launch</a>
+          <div class="collapse navbar-collapse justify-content-end col flex-fill px-0"><a href="{{ url_for('demo.demo') }}" class="btn btn-primary ml-lg-3">Launch</a>
 
           </div>
         </div>
@@ -91,20 +91,20 @@
         <div class="row mb-4">
           <div class="col">
             <ul class="nav justify-content-center">
-              <li class="nav-item"><a href="#" class="nav-link">Introduction</a>
+              <li class="nav-item"><a href="{{ url_for('intro.index') }}" class="nav-link">Introduction</a>
               </li>
-              <li class="nav-item"><a href="#" class="nav-link">Demos</a>
-              </li>
-              <li class="nav-item"><a href="#" class="nav-link">Support</a>
+              <li class="nav-item"><a href="{{ url_for('demo.demo') }}" class="nav-link">Demos</a>
               </li>
               <li class="nav-item"><a href="#" class="nav-link">Teams</a>
+              </li>
+              <li class="nav-item"><a href="#" class="nav-link">Support</a>
               </li>
             </ul>
           </div>
         </div>
         <div class="row justify-content-center text-center">
           <div class="col-xl-10">
-            <small class="text-muted">&copy;2019 DebateStar All Rights Reserved.</small>
+            <small class="text-muted">&copy;2020 DebateStar All Rights Reserved.</small>
           </div>
         </div>
       </div>
