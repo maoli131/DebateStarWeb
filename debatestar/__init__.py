@@ -18,10 +18,14 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_mapping(test_config)
 
-    # register the blog blueprint
+    # register the intro blueprint
     from . import intro
     app.register_blueprint(intro.bp)
     app.add_url_rule('/', endpoint='index')
+
+    # register the demo blueprint
+    from . import demo
+    app.register_blueprint(demo.bp)
 
     # a simple page that says hello
     @app.route('/hello')
