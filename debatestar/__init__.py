@@ -27,6 +27,10 @@ def create_app(test_config=None):
     from . import demo
     app.register_blueprint(demo.bp)
 
+    # register the team blueprint
+    from . import team
+    app.register_blueprint(team.bp)
+
     # a simple page that says hello
     @app.route('/hello')
     def hello():
