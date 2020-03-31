@@ -5,7 +5,7 @@ from flask import (
 
 bp = Blueprint('intro', __name__)
 
-# View for Intro: show the static introduct page
+# View for Intro: show the static introduction page
 @bp.route('/')
 def index():
     return render_template('index.html')
