@@ -30,6 +30,6 @@ def create_app(test_config=None):
     # a simple page that says hello
     @app.route('/hello')
     def hello():
-        return 'Hello, World!'
+        return 'Hello, World! You find our Easter Egg. Willing to join us?'
 
     return app
