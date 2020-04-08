@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+<!--Template for textAnalytics page: analyze user input text -->
+{% block header %}
+{% endblock %}
+
+{% block content %}
+    <section class="bg-dark text-light header-inner p-0 jarallax position-relative" data-jarallax data-speed="0.2" data-overlay>
+      <img src=" {{ url_for('static', filename='img/inner-6.jpg') }}" alt="Image" class="jarallax-img opacity-40">
+      <div class="container py-0">
+        <div class="row my-4 my-md-6" data-aos="fade-up">
+          <div class="col-lg-9 col-xl-8">
+            <h1 class="display-4">Text Analytics</h1>
+            <p class="lead mb-0">Input your debate script and our model automatically computes your persuasivness score.</p>
+          </div>
+        </div>
+      </div>
+      <div class="divider">
+        <img src=" {{ url_for('static', filename='img/dividers/divider-2.svg') }} " alt="graphical divider" data-inject-svg />
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-9 col-lg-8 col-xl-6">
+            <div class="text-center mb-4">
+              <h2 class="h1">Debate Speech</h2>
+              <p class="lead">Type in your debate topic and speech. Let us do the rest.
+              </p>
+            </div>
+            <form action="#" data-form-email novalidate>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Your Name</label>
+                    <input name="textanalytics-name" type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Your Email</label>
+                    <input name="textanalytics-email" type="tel" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Debate topic *</label>
+                    <input name="textanalytics-topic" type="text" class="form-control" required>
+                    <div class="invalid-feedback">
+                      Please provide a topic for the debate.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Debate Speech Text *</label>
+                    <textarea class="form-control" name="textanalytics-text" rows="20" placeholder="Your debate speech script here."></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div data-recaptcha data-sitekey="6LetuOcUAAAAACDa41DwPF6uZnQSZ_Aej4kLPj_Z"></div>
+                </div>
+                <div class="col">
+                  <div class="d-none alert alert-success" role="alert" data-success-message>
+                    A persuasiness score will be available soon.
+                  </div>
+                  <div class="d-none alert alert-danger" role="alert" data-error-message>
+                    Please fill all fields correctly.
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Analyze" data-toggle="modal" data-target="#achievement-modal">
+                    <img class="icon" src=" {{ url_for('static', filename='img/icons/theme/code/loading.svg') }} " alt="loading icon" data-inject-svg />
+                    <span>Analyze</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-1">
+        <div class="modal fade" id="achievement-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-primary border-0 text-light">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <img class="icon bg-white" src=" {{ url_for('static', filename='img/icons/interface/cross.svg') }}" alt="cross interface icon" data-inject-svg />
+                </button>
+                <div class="m-xl-4 m-3">
+                <div class="icon-round icon-round-lg bg-white mx-auto mb-4">
+                    <img class="icon bg-white" src=" {{ url_for('static', filename='img/icons/theme/general/star.svg') }}" alt="star icon" data-inject-svg />
+                </div>
+                <div class="text-center mb-4">
+                    <h4 class="h3">Persuasiveness Score Computed</h4>
+                    <div class="progress bg-primary-alt my-3">
+                    <div class="progress-bar bg-primary-3" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <p>Our model indicated your debate speech currently has a winning rate of 25%</p>
+                    <a href="#" class="btn btn-white" data-dismiss="modal">Continue</a>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+      </div>
+    </section>
+{% endblock %}
