@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 
 def create_app(test_config=None):
@@ -30,6 +30,11 @@ def create_app(test_config=None):
     # register the team blueprint
     from . import team
     app.register_blueprint(team.bp)
+
+    # error handler
+    @app.errorhandler(404)
+    def page_not_found(e):
+        return render_template('404.html'), 404
 
     # a simple page that says hello
     @app.route('/hello')
