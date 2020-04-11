@@ -7,12 +7,12 @@
 {% block content %}
 
     <section class="bg-dark text-light header-inner p-0 jarallax position-relative" data-jarallax data-speed="0.2" data-overlay>
-      <img src=" {{ url_for('static', filename='img/inner-6.jpg') }}" alt="Image" class="jarallax-img opacity-40">
+      <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80" alt="Image" class="jarallax-img opacity-40">
       <div class="container py-0">
         <div class="row my-4 my-md-6" data-aos="fade-up">
           <div class="col-lg-9 col-xl-8">
             <h1 class="display-4">Text Analytics</h1>
-            <p class="lead mb-0">Input your debate script and our model automatically computes your persuasivness score.</p>
+            <p class="lead mb-0">Interact with our advanced NLP engine by providing any debate speeches scripts. Our model can intelligently analyze their persuasiveness.</p>
           </div>
         </div>
       </div>
@@ -23,11 +23,12 @@
 
     <section>
       <div class="container">
-        <div class="row justify-content-center text-center mb-6">
+        <div class="row justify-content-center mb-6">
           <div class="col-xl-8 col-lg-9">
-            <h2 class="h1">Analysis Completed</h2>
-            <p class="lead">
-              Our deep leanring model has computed the persuasivness of your input speech scripts. Check it out.
+            <h2 class="h1 text-center">Analysis Completed</h2>
+            <p class="lead text-align-start">
+              Our NLP engine extracted relevant information from both sides of debate and then encoded language and structure features
+              with tailored GloVe embedding. It applied LSTM network to summerize the main points, evaluate similarity and finally determine the persuasiveness. 
             </p>
           </div>
         </div>
@@ -58,9 +59,9 @@
               <div class="flex-grow-1">
                 <p><br>{{ fortext }}</p>
               </div>
-              <a href="#" class="btn btn-outline-primary">
+              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmation-modal">
                 View Full Analysis
-              </a>
+              </button>
             </div>
           </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="NaN">
@@ -74,9 +75,9 @@
               </div>
               <span class="text-small text-muted">winning rate</span>
               <p><br>{{ againsttext }}</p>
-              <a href="#" class="btn btn-outline-primary">
+              <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmation-modal">
                 View Full Analysis
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -88,5 +89,28 @@
         </div>
       </div>
     </section>
+
+    <div class="modal fade" id="confirmation-modal" tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <img class="icon bg-dark" src="assets/img/icons/interface/cross.svg" alt="cross interface icon" data-inject-svg />
+            </button>
+            <div class="m-xl-4 m-3">
+              <div class="icon-round icon-round-lg bg-primary mx-auto mb-4">
+                <img class="icon bg-primary" src=" {{ url_for('static', filename='img/icons/theme/communication/readed-mail.svg') }}" alt="readed-mail icon" data-inject-svg />
+              </div>
+              <div class="mb-4">
+                <h4 class="text-center h3">Milk Tea Donation</h4>
+                <p class="text-align-start">To access full, detailed analysis report from our engine, please donate us a cup of milk tea.
+                We hope you enjoy our platform and really appreciate if you could <strong>star our<a href="https://github.com/maoli131/DebateStarWeb"> Github repo</a></strong>. Thanks!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 {% endblock %}
