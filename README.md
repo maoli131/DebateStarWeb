@@ -55,6 +55,17 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+Some machine learning / AI package is very large, so we need to use to save RAM.
+```
+pip install -r requirements.txt --no-cache-dir
+```
+NLTK package requires seperate download for data files such as stopwords. Do the following:
+```
+>>> import nltk
+>>> nltk.download()
+```
+Also, EC2 resources might need to be scaled up and we can do so by changing the instance type directly.
+
 ### Ngnix
 
 We chose `ngnix` as our reverse proxy. It listens on port 80 and routes traffic to
@@ -93,6 +104,9 @@ rule to allow 80, 440 and 22.
 
 ## Development Plan
 
-In current stage, we've implemented the frontend pages and established a skeleton
-for our backend modules. We will soon connect our model and display its output/result
-interactively. 
+In current stage, we've implemented both front/backend modules and connected
+our NLP engine. Users can interact with our debate text analyzer. Soon we will
+complete our demo page so that our model can dynamically update prediction result.
+
+Furthermore, we might want to provide more details about our model such as accuracy,
+CPU usage and more on the platform. 
