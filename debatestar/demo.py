@@ -15,3 +15,12 @@ def demo():
 @bp.route('/text')
 def text():
     return render_template('text.html')
+
+# View for Test: trial on front/back-end connection
+@bp.route('/test', methods=['POST', 'GET'])
+def test():
+    if request.method == "POST":
+        fortext = request.form['for-text']
+        againsttext = request.form['against-text']
+        return render_template('result.html', fortext=fortext, againsttext=againsttext)
+    return render_template('test.html')

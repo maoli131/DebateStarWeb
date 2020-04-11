@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+<!--Template for textAnalytics page: analyze user input text -->
+{% block header %}
+{% endblock %}
+
+{% block content %}
+
+    <section>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-9 col-lg-8 col-xl-6">
+            <div class="text-center mb-4">
+              <h2 class="h1">Debate Speech</h2>
+              <p class="lead">Type in your debate topic and speech. Let us do the rest.
+              </p>
+            </div>
+            <form method="post" novalidate>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label>Debate topic *</label>
+                    <input name="textanalytics-topic" type="text" class="form-control" required>
+                    <div class="invalid-feedback">
+                      Please provide a topic for the debate.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Debate script for Pro side *</label>
+                    <textarea class="form-control" name="for-text" rows="20" placeholder="Your debate speech script here."></textarea>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <label>Debate script for Against side *</label>
+                    <textarea class="form-control" name="against-text" rows="20" placeholder="Your debate speech script here."></textarea>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="d-none alert alert-success" role="alert" data-success-message>
+                    A persuasiness score will be available soon.
+                  </div>
+                  <div class="d-none alert alert-danger" role="alert" data-error-message>
+                    Please fill all fields correctly.
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Analyze" data-toggle="modal" data-target="#achievement-modal">
+                    <img class="icon" src=" {{ url_for('static', filename='img/icons/theme/code/loading.svg') }} " alt="loading icon" data-inject-svg />
+                    <span>Analyze</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </section>  
+{% endblock %}
+
