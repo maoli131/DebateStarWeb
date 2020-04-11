@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+<!--Template for textAnalytics page: analyze user input text -->
+{% block header %}
+{% endblock %}
+
+{% block content %}
+
+    <section class="bg-dark text-light header-inner p-0 jarallax position-relative" data-jarallax data-speed="0.2" data-overlay>
+      <img src=" {{ url_for('static', filename='img/inner-6.jpg') }}" alt="Image" class="jarallax-img opacity-40">
+      <div class="container py-0">
+        <div class="row my-4 my-md-6" data-aos="fade-up">
+          <div class="col-lg-9 col-xl-8">
+            <h1 class="display-4">Text Analytics</h1>
+            <p class="lead mb-0">Input your debate script and our model automatically computes your persuasivness score.</p>
+          </div>
+        </div>
+      </div>
+      <div class="divider">
+        <img src=" {{ url_for('static', filename='img/dividers/divider-2.svg') }} " alt="graphical divider" data-inject-svg />
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row justify-content-center text-center mb-6">
+          <div class="col-xl-8 col-lg-9">
+            <h2 class="h1">Analysis Completed</h2>
+            <p class="lead">
+              Our deep leanring model has computed the persuasivness of your input speech scripts. Check it out.
+            </p>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="NaN">
+            <div class="card card-body align-items-center ">
+              <div class="pt-md-2">
+                <h4>For Side</h4>
+              </div>
+              <div class="d-flex align-items-start pb-md-2">
+                <span class="display-4 mb-0">49</span>
+                <span class="h3">%</span>
+              </div>
+              <span class="text-small text-muted">winning rate</span>
+              <div class="flex-grow-1">
+                <p><br>{{ fortext }}</p>
+              </div>
+              <a href="#" class="btn btn-outline-primary">
+                View Full Analysis
+              </a>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="NaN">
+            <div class="card card-body align-items-center">
+              <div class="pt-md-2">
+                <h4>Against Side</h4>
+              </div>
+              <div class="d-flex align-items-start pb-md-2">
+                <span class="display-4 mb-0">49</span>
+                <span class="h3">%</span>
+              </div>
+              <span class="text-small text-muted">winning rate</span>
+              <p><br>{{ againsttext }}</p>
+              <a href="#" class="btn btn-outline-primary">
+                View Full Analysis
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col text-center">
+            <span>Have different speeches? <a href="{{ url_for('demo.text') }}" class="hover-arrow">Try Again</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
