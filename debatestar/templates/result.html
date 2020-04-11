@@ -32,13 +32,26 @@
           </div>
         </div>
         <div class="row justify-content-center mb-3">
+          <div class="col-md-9">
+            <div class="card card-body flex-row py-4">
+                <div class="icon-round icon-round-lg bg-primary-2">
+                    <img class="icon bg-primary-2" src="{{ url_for('static', filename='img/icons/theme/devices/display-1.svg') }}" alt="display-1 icon" data-inject-svg />
+                </div>
+                <div class="ml-3">
+                    <h4>Topic</h4>
+                    <div class="avatar-author d-block">
+                        <span>{{ title }}</span>
+                    </div>
+                </div>
+            </div>
+          </div>
           <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="NaN">
             <div class="card card-body align-items-center ">
               <div class="pt-md-2">
                 <h4>For Side</h4>
               </div>
               <div class="d-flex align-items-start pb-md-2">
-                <span class="display-4 mb-0">49</span>
+                <span class="display-4 mb-0">{{ forrate }}</span>
                 <span class="h3">%</span>
               </div>
               <span class="text-small text-muted">winning rate</span>
@@ -56,7 +69,7 @@
                 <h4>Against Side</h4>
               </div>
               <div class="d-flex align-items-start pb-md-2">
-                <span class="display-4 mb-0">49</span>
+                <span class="display-4 mb-0">{{ againstrate }}</span>
                 <span class="h3">%</span>
               </div>
               <span class="text-small text-muted">winning rate</span>

@@ -12,15 +12,36 @@ def demo():
     return render_template('demo.html')
 
 # View for the text: show the persuasivenss rating for user input debate script
-@bp.route('/text')
+@bp.route('/text', methods=['POST', 'GET'])
 def text():
-    return render_template('text.html')
-
-# View for Test: trial on front/back-end connection
-@bp.route('/test', methods=['POST', 'GET'])
-def test():
     if request.method == "POST":
+        
+        # Gather user input. TODO validate user input
+        title = request.form['title']
         fortext = request.form['for-text']
         againsttext = request.form['against-text']
-        return render_template('result.html', fortext=fortext, againsttext=againsttext)
-    return render_template('test.html')
+
+        # Call our model to compute the results. 
+        forrate, againstrate = compute_score(title, fortext, againsttext)
+
+        # Render the results
+        return render_template('result.html', 
+            title=title,
+            fortext=fortext, 
+            againsttext=againsttext,
+            forrate=forrate,
+            againstrate=againstrate
+        )
+    return render_template('text.html')
+
+
+# Helper function to connect backend code with our model
+# 
+def compute_score(title, fortext, againsttext):
+    from .model.run import predict
+    result = predict(
+        title=title,
+        for_script=fortext,
+        against_script=againsttext
+    )
+    return str(round(result * 100, 2)), str(round((1 - result) * 100, 2))
