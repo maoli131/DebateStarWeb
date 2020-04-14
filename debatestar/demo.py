@@ -6,6 +6,10 @@ from flask import (
 
 bp = Blueprint('demo', __name__)
 
+# In-memory store of user input debate or the default one.
+# Warning: this is very dangerous and vulnerable to many attacks
+# debate = None
+
 # View for the Demo: show the persuasivenss of given debate video
 @bp.route('/demo')
 def demo():
@@ -14,25 +18,34 @@ def demo():
 # View for the text: show the persuasivenss rating for user input debate script
 @bp.route('/text', methods=['POST', 'GET'])
 def text():
-    if request.method == "POST":
-        
+
+    # use the global debate dict
+    # global debate
+    
+    if request.method == "POST":    
         # Gather user input. TODO validate user input
-        title = request.form['title']
+        title = request.form['topic']
         fortext = request.form['for-text']
         againsttext = request.form['against-text']
-
+        debate = {
+            'topic': title,
+            'fortext': fortext,
+            'againsttext': againsttext
+        }
         # Call our model to compute the results. 
         forrate, againstrate = compute_score(title, fortext, againsttext)
-
+        rate = {
+            'for': forrate,
+            'against': againstrate
+        }
         # Render the results
-        return render_template('result.html', 
-            title=title,
-            fortext=fortext, 
-            againsttext=againsttext,
-            forrate=forrate,
-            againstrate=againstrate
-        )
-    return render_template('text.html')
+        return render_template('result.html', debate=debate, rate=rate)
+    
+    # input boxes with default texts
+    from .testmodel import capitalism, parent
+    #if debate is None:
+    debate = parent
+    return render_template('text.html', debate=debate)
 
 
 # Helper function to connect backend code with our model

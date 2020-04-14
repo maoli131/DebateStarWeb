@@ -41,7 +41,7 @@
                 <div class="ml-3">
                     <h4>Topic</h4>
                     <div class="avatar-author d-block">
-                        <span>{{ title }}</span>
+                        <span>{{ debate['topic'] }}</span>
                     </div>
                 </div>
             </div>
@@ -52,12 +52,12 @@
                 <h4>For Side</h4>
               </div>
               <div class="d-flex align-items-start pb-md-2">
-                <span class="display-4 mb-0">{{ forrate }}</span>
+                <span class="display-4 mb-0">{{ rate['for'] }}</span>
                 <span class="h3">%</span>
               </div>
               <span class="text-small text-muted">winning rate</span>
               <div class="flex-grow-1">
-                <p><br>{{ fortext }}</p>
+                <p><br>{{ debate['fortext'] }}</p>
               </div>
               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmation-modal">
                 View Full Analysis
@@ -70,11 +70,11 @@
                 <h4>Against Side</h4>
               </div>
               <div class="d-flex align-items-start pb-md-2">
-                <span class="display-4 mb-0">{{ againstrate }}</span>
+                <span class="display-4 mb-0">{{ rate['against'] }}</span>
                 <span class="h3">%</span>
               </div>
               <span class="text-small text-muted">winning rate</span>
-              <p><br>{{ againsttext }}</p>
+              <p><br>{{ debate['againsttext'] }}</p>
               <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#confirmation-modal">
                 View Full Analysis
               </button>
@@ -95,7 +95,7 @@
         <div class="modal-content">
           <div class="modal-body">
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <img class="icon bg-dark" src="assets/img/icons/interface/cross.svg" alt="cross interface icon" data-inject-svg />
+              <img class="icon bg-dark" src="{{ url_for('static', filename='img/icons/interface/cross.svg') }}" alt="cross interface icon" data-inject-svg />
             </button>
             <div class="m-xl-4 m-3">
               <div class="icon-round icon-round-lg bg-primary mx-auto mb-4">

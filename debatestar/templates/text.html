@@ -35,7 +35,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>Debate topic *</label>
-                    <input name="title" type="text" class="form-control" placeholder="Your debate topic here" required>
+                    <input name="topic" type="text" class="form-control" value="{{ debate['topic'] }}" required>
                     <div class="invalid-feedback">
                       Please provide a topic for the debate.
                     </div>
@@ -44,13 +44,13 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label>Debate script FOR the motion *</label>
-                    <textarea class="form-control" name="for-text" rows="16" placeholder="Your debate speech script here." required></textarea>
+                    <textarea class="form-control" name="for-text" rows="16" placeholder="Your debate speech script here." required>{{ debate['fortext'] }}</textarea>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
                     <label>Debate script AGAINST the motion *</label>
-                    <textarea class="form-control" name="against-text" rows="16" placeholder="Your debate speech script here." required></textarea>
+                    <textarea class="form-control" name="against-text" rows="16" placeholder="Your debate speech script here." required>{{ debate['againsttext'] }}</textarea>
                   </div>
                 </div>
                 <div class="col">
