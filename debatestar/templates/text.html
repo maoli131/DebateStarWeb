@@ -2,6 +2,15 @@
 
 <!--Template for textAnalytics page: analyze user input text -->
 {% block header %}
+
+<script type="text/javascript">
+  function eraseDefaultText() {
+    document.getElementById("topic").value = "";
+    document.getElementById("for-text").value = "";
+    document.getElementById("against-text").value = "";
+  }
+</script>
+
 {% endblock %}
 
 {% block content %}
@@ -35,7 +44,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label>Debate topic *</label>
-                    <input name="topic" type="text" class="form-control" value="{{ debate['topic'] }}" required>
+                    <input name="topic" id="topic" type="text" class="form-control" placeholder="Your debate topic here." value="{{ debate['topic'] }}" required>
                     <div class="invalid-feedback">
                       Please provide a topic for the debate.
                     </div>
@@ -44,13 +53,13 @@
                 <div class="col-12">
                   <div class="form-group">
                     <label>Debate script FOR the motion *</label>
-                    <textarea class="form-control" name="for-text" rows="16" placeholder="Your debate speech script here." required>{{ debate['fortext'] }}</textarea>
+                    <textarea class="form-control" id="for-text" name="for-text" rows="12" placeholder="Your debate speech script here." required>{{ debate['fortext'] }}</textarea>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-group">
                     <label>Debate script AGAINST the motion *</label>
-                    <textarea class="form-control" name="against-text" rows="16" placeholder="Your debate speech script here." required>{{ debate['againsttext'] }}</textarea>
+                    <textarea class="form-control" id="against-text" name="against-text" rows="12" placeholder="Your debate speech script here." required>{{ debate['againsttext'] }}</textarea>
                   </div>
                 </div>
                 <div class="col">
@@ -60,7 +69,11 @@
                   <div class="d-none alert alert-danger" role="alert" data-error-message>
                     Please fill all fields correctly.
                   </div>
-                  <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Analyze" data-toggle="modal" data-target="#achievement-modal">
+                  <button type="button" class="btn btn-secondary btn-loading" onclick="javascript:eraseDefaultText();" data-loading-text="Clear">
+                    <img class="icon" src=" {{ url_for('static', filename='img/icons/theme/code/loading.svg') }} " alt="loading icon" data-inject-svg />
+                    <span>Clear</span>
+                  </button>
+                  <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Analyze">
                     <img class="icon" src=" {{ url_for('static', filename='img/icons/theme/code/loading.svg') }} " alt="loading icon" data-inject-svg />
                     <span>Analyze</span>
                   </button>
