@@ -51,7 +51,7 @@
       </div>
     </section>
 
-    <section class="bg-primary-alt has-divider">
+    <section class="bg-primary-alt">
       <div class="container pb-0">
         <div class="row justify-content-center text-center mb-6">
           <div class="col-xl-8 col-lg-9">
@@ -73,15 +73,25 @@
           </div>
         </div>
         <div class="row justify-content-center mt-6 mb-lg-n7">
-          <div class="col-xl-8 col-lg-9 layer-1">
+          <div class="col-lg-8 col-xl-7">
+            <div class="alert alert-primary">Scores dynamically udpate as video progress</div>       
+            <div id="vplayer" class="plyr__video-embed rounded">
+              <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/ROT2HjxovsE?enablejsapi=1" 
+                      frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen enablejsapi="1">
+              </iframe>
+            </div> 
+          </div> 
+          <!-- <div class="col-xl-8 col-lg-9 layer-1">
             <div class="alert alert-secondary">Some functionality still under construction. Stay Tuned.</div>
             <div class="video-poster rounded shadow-lg">
+              <div class="plyr" data-plyr-provider="youtube" data-plyr-embed-id="ROT2HjxovsE"></div>
               <a data-fancybox href="https://youtu.be/ROT2HjxovsE" class="btn btn-lg btn-primary btn-round">
                 <img class="icon" src="{{ url_for('static', filename='img/icons/theme/media/play.svg') }}" alt="play icon" data-inject-svg />
               </a>
               <img src="https://wds.advection.net/iq2/img/capitalism_is_a_blessing/Capitalism_debateart.png" alt="Image">
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
