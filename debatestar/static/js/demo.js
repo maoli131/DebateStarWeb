@@ -61,17 +61,29 @@ function updateTime() {
 function updateScore(videotime) {
     
     //console.log('videotime: ' + Math.round(videotime));
+    videotime = Math.round(videotime);
+
+    // loop to find the most recent time-score entry
+    while (videotime != 0 && ! time_score.hasOwnProperty(videotime)) {
+        videotime -= 1;
+    }
 
     // if reached a new time-stamp
-    if (time_score.hasOwnProperty(Math.round(videotime))) {
+    if (time_score.hasOwnProperty(videotime)) {
     
-        var forrate = parseFloat(time_score[Math.round(videotime)]);
-        forrate = forrate.toFixed(4) * 100;
-        var againstrate = 100 - forrate;
+        var forrate = parseFloat(time_score[videotime]);
+        var againstrate = 1 - forrate;
+        forrate = forrate * 100;
+        againstrate = againstrate * 100;
+        forrate = forrate.toFixed(2);
         againstrate = againstrate.toFixed(2);
         document.getElementById("forrate").textContent = forrate.toString() + "%";
         document.getElementById("againstrate").textContent = againstrate.toString() + "%";
 
-        console.log("update score " + forrate);
+        // console.log("update score " + forrate);
+    }
+    // debug
+    else {
+        console.log("something wrong");
     }
 }
