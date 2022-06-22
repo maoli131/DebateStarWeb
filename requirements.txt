@@ -33,7 +33,7 @@ MarkupSafe==1.1.1
 mccabe==0.6.1
 networkx==2.4
 nltk==3.4.5
-numpy==1.18.2
+numpy==1.22.0
 pandas==1.0.3
 paramiko==2.7.1
 pathspec==0.5.9
